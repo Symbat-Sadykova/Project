@@ -27,6 +27,31 @@ for i in range(101):
     file()
 print(time.time() - start)
 
-time == 
+time == 101.92697954177856
 
 3
+import time
+import threading
+
+start = time.time()
+
+
+def file():
+    time.sleep(1)
+    f_1 = open("File.txt", "w")
+    f_1.close()
+
+
+thr_list = []
+
+for i in range(10):
+   thr = threading.Thread(target=file)
+   thr_list.append(thr)
+   thr.start()
+
+for j in thr_list:
+   j.join()
+
+print(time.time() - start)
+
+time == 1.031135082244873
