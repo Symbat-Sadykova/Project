@@ -1,0 +1,32 @@
+1
+import time
+start = time.time()
+
+def file():
+    time.sleep(1)
+    f_1 = open("File.txt", "w")
+    f_1.close()
+
+file()
+print(time.time() - start)
+
+time == 1.0154967308044434
+
+2
+import time
+start = time.time()
+
+
+def file():
+    time.sleep(1)
+    f_1 = open("File.txt", "w")
+    f_1.close()
+
+
+for i in range(101):
+    file()
+print(time.time() - start)
+
+time == 
+
+3
