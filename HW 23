@@ -6,7 +6,7 @@ start = time.time()
 
 def num():
     time.sleep(1)
-    file = open("File.txt", "w")
+    file = open("File.txt", "a")
     tmp = random.randint(0, 100)
     file.write(str(tmp))
     file.close()
