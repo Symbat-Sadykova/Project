@@ -1,0 +1,61 @@
+#1 time == 1.0155787467956543
+import random
+import time
+import multiprocessing as mp
+start = time.time()
+
+def num():
+    time.sleep(1)
+    file = open("File.txt", "w")
+    tmp = random.randint(0, 100)
+    file.write(str(tmp))
+    file.close()
+
+num()
+print(time.time() - start)
+
+#2 time == 
+import random
+import time
+import multiprocessing as mp
+start = time.time()
+
+def num():
+    time.sleep(1)
+    file = open("File.txt", "w")
+    tmp = random.randint(0, 100)
+    file.write(str(tmp))
+    file.close()
+
+for i in range(1000):
+    num()
+print(time.time() - start)
+
+#3 time == 
+import random
+import time
+import multiprocessing as mp
+
+
+def num():
+    time.sleep(1)
+    file = open("File.txt", "a")
+    tmp = random.randint(0, 100)
+    file.write(str(tmp))
+    file.close()
+
+
+if __name__ == "__main__":
+    start = time.time()
+    pr_list = []
+    for i in range(1000):
+        process = mp.Process(target=num)
+        process.start()
+        pr.append(process)
+
+    for j in pr_list:
+        j.join()
+
+    print(time.time() - start)
+
+
