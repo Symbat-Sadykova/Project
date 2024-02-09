@@ -14,7 +14,7 @@ def num():
 num()
 print(time.time() - start)
 
-#2 time == 
+#2 time == 1000.151463747024536
 import random
 import time
 import multiprocessing as mp
@@ -22,7 +22,7 @@ start = time.time()
 
 def num():
     time.sleep(1)
-    file = open("File.txt", "w")
+    file = open("File.txt", "a")
     tmp = random.randint(0, 100)
     file.write(str(tmp))
     file.close()
@@ -51,7 +51,7 @@ if __name__ == "__main__":
     for i in range(1000):
         process = mp.Process(target=num)
         process.start()
-        pr.append(process)
+        pr_list.append(process)
 
     for j in pr_list:
         j.join()
