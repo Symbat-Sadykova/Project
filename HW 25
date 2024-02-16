@@ -1,0 +1,10 @@
+import time
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+browser = webdriver.Chrome()
+browser.get("https://www.gismeteo.kz/weather-astana-5164/now/")
+
+elms = browser.find_elements(By.CLASS_NAME, "value")
+print(f"min temp: {elms[0].text}")
+print(f"max temp: {elms[1].text}")
