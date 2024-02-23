@@ -1,0 +1,41 @@
+import requests
+import time
+
+start = time.time()
+
+
+def load():
+    response = requests.get("https://www.google.com")
+    response.text
+    print("Loaded")
+
+
+for i in range(100):
+    load()
+print(f"Time = {time.time() - start}")
+time = 48.66952466964722
+
+#2
+import requests
+import time
+import asyncio
+
+
+async def load():
+    response = requests.get("https://www.google.com")
+    #response.text
+    print("Loaded")
+    await asyncio.sleep(0.5)
+
+
+async def main():
+    l = []
+    for i in range(100):
+        l.append(load())
+    await asyncio.gather(*l)
+
+
+start = time.time()
+asyncio.run(main())
+print(f"Time = {time.time() - start}")
+time = 47
